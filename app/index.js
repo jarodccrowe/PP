@@ -156,7 +156,6 @@ dashboard.directive('sidebarMenu', function() {
       $scope.isActiveTab = function(moduleIndex) {
         return moduleIndex == $scope.currentTab;
       }
-
     }
   };
 });
