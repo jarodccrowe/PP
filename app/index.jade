@@ -1,0 +1,153 @@
+include ./layouts/mixins.jade
+
+doctype html
+html(ng-app="dashboard")
+  head
+    meta(name="viewport", content-width="device-width", initial-scale=1.0, maximum-scale=1.0, user-scalable="no")
+    link(rel="SHORTCUT ICON", href="/assets/images/pp.ico")
+    link(rel="stylesheet", type="text/css", href="/assets/css/pp-core.css")
+    link(rel="stylesheet", type="text/css", href="/assets/css/dashboards2.css")
+
+  body
+    .wrapper
+      .navbar.navbar-infinity.navbar-static-top.infinity-topbar(role="navigation")
+        .navbar-header
+          button(type="button", class="navbar-toggle", data-toggle="collapse", data-target=".navbar-ex1-collapse")
+            span.sr-only Toggle navigation
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          .logo-section
+            .dropdown
+              a.dropdown-toggle.navbar-brand(href='#')
+                img(class="navbar-logo img-responsive", src='/assets/images/logo-ip.png')
+        .collapse.navbar-collapse.navbar-ex1-collapse
+          ul.navbar-nav.navbar-right.user
+            li.user-account
+              .dropdown
+                a(href="#", class="dropdown-toggle", data-toggle="dropdown")
+                  img(src="//cloud.pureprofile.com/images/profile-photo-30.png", alt="image description", width="35", height="35")
+                  i.fa.fa-bars.menu-image
+                ul(class="dropdown-menu", role="menu")
+                  li: a(href='/admin/business-details/') Admin
+                  li: a(href='/account/account-details/') Account
+                  li: a(href='/account/business-details/') Users
+                  li: a(href='#') Help
+                  li.bdr-top: a(href='/logout') Sign out
+
+      //- Header
+      div(site-header)
+      //- Page content
+      .side-bar-layout
+        //- Sidebar section
+        div(sidebar-menu)
+        //- Main page section
+        .main-content(ng-view)
+        .push
+
+      //- Back to top button
+      div(back-to-top)
+
+      //- BS Modals
+      #globalFilters.modal.fade
+        .modal-dialog
+          .modal-content
+            .modal-header
+              button(type="button" data-dismiss="modal" aria-hidden="true" class="close") &times;
+              h3.modal-title.text-case-reset Global Filters
+              span.line.blue
+            .modal-body
+              form.form.branch-select-pane.expand-content
+                p.text-strong Time period:
+                select.chosen
+                  option(value="") Last 4 weeks
+                  option(value="") Last 8 weeks
+                  option(value="") Last 12 weeks
+                  option(value="") Rolling year
+                  option(value="") Quarter
+                  option(value="") Year to date
+                  option(value="") Full year
+                  option(value="true", ng-model="previousMonthFilter") Prevously closed month
+                select.chosen(ng-show="previousMonthFilter")
+                  option May 2014
+                  option April 2014
+                  option March 2014
+                  option February 2014
+                  option January 2014
+                  option December 2013
+                p.text-strong Brand:
+                select.chosen
+                  option(value="") Weetbix
+                  option(value="") Weetbix
+                  option(value="") Weetbix
+                  option(value="") Weetbix
+                  option(value="") Weetbix
+                p.text-strong Gender:
+                .radio-button-group.inline.clearfix
+                  .radio-button-item
+                    .radio-button
+                    span.radio-button-label Everyone
+                  .radio-button-item
+                    .radio-button
+                    span.radio-button-label Only males
+                  .radio-button-item
+                    .radio-button
+                    span.radio-button-label Only females
+                p.text-strong Segment type:
+                .radio-button-group.inline.clearfix
+                  .radio-button-item
+                    .radio-button
+                    span.radio-button-label Both
+                  .radio-button-item
+                    .radio-button
+                    span.radio-button-label Consumers
+                  .radio-button-item
+                    .radio-button
+                    span.radio-button-label Considerers
+            .modal-footer
+              span.hr
+              .text-center
+                button.btn.btn-default(type="button", data-dismiss="modal") Cancel
+                button.btn.btn-default(type="button", data-dismiss="modal") Clear
+                button.btn.btn-blue(type="button", data-dismiss="modal") Save
+
+    footer.footer.hidden-print
+      .container
+        .row
+          .col-md-12
+            .row
+              .col-md-12
+                .logo: img(src='//cloud.pureprofile.com/images/infinity-logo-footer-2.png', alt='Infinity Platform')
+                p.copyright Copyright &copy; 2014. Pureprofile Australia Pty Ltd. Patented and patent pending.
+            .row
+              .col-md-12
+                ul.footer-menu
+                  li
+                    a(href='http://www.pureprofile.com/') Pureprofile
+                  li
+                    | •&nbsp;
+                    a(href='http://www.pureprofile.com/businesses') Pureprofile for Business
+                  li
+                    | •&nbsp;
+                    a(href='http://www.pureprofile.com/business/terms') Terms of Service
+                  li
+                    | •&nbsp;
+                    a(href='http://www.pureprofile.com/business/privacy-policy/') Privacy Policy
+                  li
+                    | •&nbsp;
+                    a(href='http://www.pureprofile.com/business/contact-us/') Contact us
+    block scripts
+      //- Vendor scripts
+      script(type="text/javascript", src="/assets/js/vendor/jquery-1.11.0.min.js")
+      script(type="text/javascript", src="/assets/js/vendor/bootstrap3.min.js")
+      script(type="text/javascript", src="/assets/js/vendor/angular/angular.min.js")
+      script(type="text/javascript", src="/assets/js/vendor/angular/angular-resource.min.js")
+      script(type="text/javascript", src="/assets/js/vendor/angular/angular-route.min.js")
+      //- Application scripts
+      script(type="text/javascript", src="/assets/js/plugins.js")
+      script(type="text/javascript", src="/assets/js/vendor/highcharts.funnel.js")
+      script(type="text/javascript", src="/assets/js/main.js")
+      //- View scripts
+      script(type="text/javascript", src="/index.js")
+      //- Live Reload; for dev only
+      script(src="//localhost:9000/livereload.js")

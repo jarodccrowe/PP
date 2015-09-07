@@ -1,0 +1,33 @@
+
+@media print {
+
+	// global class to hide sections
+	.print-hide {
+		display:none;
+	}
+
+	.print-page-break {
+		page-break-before:always;
+	}
+
+	.row {
+		page-break-inside: avoid
+	}
+
+	// Layout overrides
+	.side-bar-layout {
+		.main-content {
+			padding-left: 0;
+		}
+		.section-dashboard {
+			padding-left: 0;
+			padding-right: 0;
+		}
+		.container-dashboard {
+			margin:0;
+			width:100%;
+			max-width: 100%;
+		}
+	}
+
+}

@@ -1,0 +1,27 @@
+//
+// Lists that need to display in a similar way to tables
+// By using the whole width of the row and allocation each
+// Item an even width in the row
+//
+[class^="list-block-"],
+[class*=" list-block-"] {
+	width:100%;
+	overflow:auto;
+	.list-item {
+		float:left;
+		padding:0;
+		margin:0;
+	}
+}
+
+.list-block-6 {
+	.list-item {
+		width:16.5%;		
+	}
+}
+
+.list-block-4 {
+	.list-item {
+		width:25%;
+	}
+}

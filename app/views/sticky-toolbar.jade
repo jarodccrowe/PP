@@ -1,0 +1,14 @@
+.sticky-toolbar
+  .container-fluid
+    .row
+      .col-xs-2(ng-repeat="filter in siteData.filtersGlobal")
+        .media
+          .pull-left(ng-show="filter.image")
+            img.media-object(ng-src="/assets/images/{{filter.image}}")
+          .media-body
+            span.text-default.media-heading {{filter.name}}:
+            .text-medium.text-colour-secondary {{filter.value}}
+      .col-xs-2
+        button.btn.btn-default(type="button", data-toggle="modal", data-target="#globalFilters") 
+          i.fa.fa-cog
+          | Global Filters

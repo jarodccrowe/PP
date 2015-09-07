@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html ng-app="dashboard">
+  <head>
+    <meta name="viewport" content-width="device-width" initial-scale="1" maximum-scale="1" user-scalable="no">
+    <link rel="SHORTCUT ICON" href="/assets/images/pp.ico">
+    <link rel="stylesheet" type="text/css" href="/assets/css/pp-core.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/dashboards2.css">
+  </head>
+  <body>
+    <div class="wrapper">
+      <div role="navigation" class="navbar navbar-infinity navbar-static-top infinity-topbar">
+        <div class="navbar-header">
+          <button type="button" data-toggle="collapse" data-target=".navbar-ex1-collapse" class="navbar-toggle"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+          <div class="logo-section">
+            <div class="dropdown"><a href="#" class="dropdown-toggle navbar-brand"><img src="/assets/images/logo-ip.png" class="navbar-logo img-responsive"></a></div>
+          </div>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+          <ul class="navbar-nav navbar-right user">
+            <li class="user-account">
+              <div class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle"><img src="//cloud.pureprofile.com/images/profile-photo-30.png" alt="image description" width="35" height="35"><i class="fa fa-bars menu-image"></i></a>
+                <ul role="menu" class="dropdown-menu">
+                  <li><a href="/admin/business-details/">Admin</a></li>
+                  <li><a href="/account/account-details/">Account</a></li>
+                  <li><a href="/account/business-details/">Users</a></li>
+                  <li><a href="#">Help</a></li>
+                  <li class="bdr-top"><a href="/logout">Sign out</a></li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div site-header></div>
+      <div class="side-bar-layout">
+        <div sidebar-menu></div>
+        <div ng-view class="main-content"></div>
+        <div class="push"></div>
+      </div>
+      <div back-to-top></div>
+      <div id="globalFilters" class="modal fade">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" data-dismiss="modal" aria-hidden="true" class="close">&times;</button>
+              <h3 class="modal-title text-case-reset">Global Filters</h3><span class="line blue"></span>
+            </div>
+            <div class="modal-body">
+              <form class="form branch-select-pane expand-content">
+                <p class="text-strong">Time period:</p>
+                <select class="chosen">
+                  <option value="">Last 4 weeks</option>
+                  <option value="">Last 8 weeks</option>
+                  <option value="">Last 12 weeks</option>
+                  <option value="">Rolling year</option>
+                  <option value="">Quarter</option>
+                  <option value="">Year to date</option>
+                  <option value="">Full year</option>
+                  <option value="true" ng-model="previousMonthFilter">Prevously closed month</option>
+                </select>
+                <select ng-show="previousMonthFilter" class="chosen">
+                  <option>May 2014</option>
+                  <option>April 2014</option>
+                  <option>March 2014</option>
+                  <option>February 2014</option>
+                  <option>January 2014</option>
+                  <option>December 2013</option>
+                </select>
+                <p class="text-strong">Brand:</p>
+                <select class="chosen">
+                  <option value="">Weetbix</option>
+                  <option value="">Weetbix</option>
+                  <option value="">Weetbix</option>
+                  <option value="">Weetbix</option>
+                  <option value="">Weetbix</option>
+                </select>
+                <p class="text-strong">Gender:</p>
+                <div class="radio-button-group inline clearfix">
+                  <div class="radio-button-item">
+                    <div class="radio-button"></div><span class="radio-button-label">Everyone</span>
+                  </div>
+                  <div class="radio-button-item">
+                    <div class="radio-button"></div><span class="radio-button-label">Only males</span>
+                  </div>
+                  <div class="radio-button-item">
+                    <div class="radio-button"></div><span class="radio-button-label">Only females</span>
+                  </div>
+                </div>
+                <p class="text-strong">Segment type:</p>
+                <div class="radio-button-group inline clearfix">
+                  <div class="radio-button-item">
+                    <div class="radio-button"></div><span class="radio-button-label">Both</span>
+                  </div>
+                  <div class="radio-button-item">
+                    <div class="radio-button"></div><span class="radio-button-label">Consumers</span>
+                  </div>
+                  <div class="radio-button-item">
+                    <div class="radio-button"></div><span class="radio-button-label">Considerers</span>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer"><span class="hr"></span>
+              <div class="text-center">
+                <button type="button" data-dismiss="modal" class="btn btn-default">Cancel</button>
+                <button type="button" data-dismiss="modal" class="btn btn-default">Clear</button>
+                <button type="button" data-dismiss="modal" class="btn btn-blue">Save</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="footer hidden-print">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="logo"><img src="//cloud.pureprofile.com/images/infinity-logo-footer-2.png" alt="Infinity Platform"></div>
+                <p class="copyright">Copyright &copy; 2014. Pureprofile Australia Pty Ltd. Patented and patent pending.</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <ul class="footer-menu">
+                  <li><a href="http://www.pureprofile.com/">Pureprofile</a></li>
+                  <li>•&nbsp;<a href="http://www.pureprofile.com/businesses">Pureprofile for Business</a></li>
+                  <li>•&nbsp;<a href="http://www.pureprofile.com/business/terms">Terms of Service</a></li>
+                  <li>•&nbsp;<a href="http://www.pureprofile.com/business/privacy-policy/">Privacy Policy</a></li>
+                  <li>•&nbsp;<a href="http://www.pureprofile.com/business/contact-us/">Contact us</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script type="text/javascript" src="/assets/js/vendor/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="/assets/js/vendor/bootstrap3.min.js"></script>
+    <script type="text/javascript" src="/assets/js/vendor/angular/angular.min.js"></script>
+    <script type="text/javascript" src="/assets/js/vendor/angular/angular-resource.min.js"></script>
+    <script type="text/javascript" src="/assets/js/vendor/angular/angular-route.min.js"></script>
+    <script type="text/javascript" src="/assets/js/plugins.js"></script>
+    <script type="text/javascript" src="/assets/js/vendor/highcharts.funnel.js"></script>
+    <script type="text/javascript" src="/assets/js/main.js"></script>
+    <script type="text/javascript" src="/index.js"></script>
+    <script src="//localhost:9000/livereload.js"></script>
+  </body>
+</html>

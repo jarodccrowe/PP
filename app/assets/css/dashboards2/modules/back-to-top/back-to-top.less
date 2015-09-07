@@ -1,0 +1,36 @@
+.back-to-top {
+    position:fixed;
+    z-index: 11;
+    bottom:-20px;
+    right:50px;
+    background-color:#666666;
+    font-size:4em;
+    width:80px;
+    height:60px;
+    line-height:60px;
+    text-align: center;
+    
+    -moz-transition:bottom 0.1s ease-in-out, background-color 0.3s ease-in-out;
+    -webkit-transition:bottom 0.1s ease-in-out, background-color 0.3s ease-in-out;
+    -ms-transition:bottom 0.1s ease-in-out, background-color 0.3s ease-in-out;
+    -o-transition:bottom 0.1s ease-in-out, background-color 0.3s ease-in-out;
+    transition:bottom 0.1s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+.back-to-top:hover {bottom:-10px; background-color:@theme-colour-primary; text-decoration:none;}
+
+.back-to-top-arrow {
+    width: 30px;
+    position: absolute;
+    top: 15px;
+    left: 50%;
+    margin-left: -19%;
+}
+
+@media screen and (max-width:767px) {
+
+    .back-to-top {
+        display:none;
+    }
+
+}

@@ -1,0 +1,122 @@
+@selectedColor: #3d82ab;
+
+.scroll-container{
+	overflow: scroll;
+	height: 500px;
+}
+.simple-table{
+	text-align: center;
+	border: 0px;
+
+	thead{
+		background:@DtHeaderBgColour;
+		border-color: @borderDark;
+		th{
+			font-size: @baseFontSize + .1em;
+			font-weight: normal;
+			text-align: center;
+			vertical-align: middle;
+			padding: 10px;
+			border-color: @borderDark;
+
+			& .popover-holder{
+				position: relative;
+			}
+
+			
+			&.blank-cell{
+				background-color: transparent;
+				border: 0px;
+			}
+
+			&.filter-col{
+				padding: 0;
+				&.icon-cell{
+					&:hover{
+						background-color: darken(@DtHeaderBgColour, 30%);
+						color: @white;
+
+						a.filter-icon{
+							color: @white;
+						}
+					}
+
+					a.filter-icon{
+						display: block;
+						padding: 10px 0;
+						width: 50px;
+						font-size: @baseFontSize - .3em;
+						color: @greyDark;
+						margin:0 auto;
+						
+						&:hover{
+							color: @white;
+						}
+					}
+
+					&.selected{
+						color: @white;
+
+						&:hover{
+							background-color: darken(@selectedColor,10%);
+						}
+
+						a.filter-icon{
+							color: @white;
+						}
+					}
+				}
+			}
+
+			&.selected{
+				background-color: @selectedColor;
+				color: @white;
+
+				a.filter-icon{
+					color: @white;
+				}
+			}
+		}
+
+	}		
+	tbody{
+		&.legend{
+			td{
+				text-align: left;
+			}
+		}
+
+		tr{
+
+			&.selected{
+				td{
+					background-color: lighten(@selectedColor, 40%);
+					color: @greyDark;
+					border-color: #ccc;
+					&.dark{
+						background-color: @selectedColor;
+						color: @white;
+					}
+				}
+			}
+
+			td{
+				font-size: @baseFontSize;
+				text-align: center;
+				background-color:@DtCellBg;
+				padding: 10px;
+				border-color: @borderDark;
+
+				&.br{
+					background:@DtHeaderBgColour;
+				}
+
+				&.selected{
+					background-color: lighten(@selectedColor, 40%);
+					color: @greyDark;
+					border-bottom-color: #ccc;
+				}
+			}
+		}
+	}
+}

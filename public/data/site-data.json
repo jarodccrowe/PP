@@ -1,0 +1,61 @@
+{
+  "name": "Sanitarium Dashboard",
+	"lastUpdated": "dd mm yyyy",
+	"dateRange": "Jan - Apr",
+	"dashboardColour": "blue",
+	"pageHeaderImage": "/assets/images/page-header-sanitarium.png",
+	"clientLogo": "/assets/images/logo-sanitarium.png",
+	"leadParagraph": "The Sanitarium brand trackers continuously monitor brand health measures, claimed consumption and communication effectiveness. There are two continuous trackers reported in the dashboards; Sanitarium Breakfast Tracker (covers breakfast cereals and on the go breakfast brands), and Sanitarium Non Dairy Milk Tracker (covers both dairy and non dairy milk brands)",
+	"filtersGlobal": [
+		{
+			"name": "Brand",
+			"image": "filter-image.png",
+			"value": "Weetbix"
+		},
+		{
+			"name": "Group",
+			"value": "14 - 17 Yrs"
+		},
+		{
+			"name": "Time Period",
+			"value": "Rolling month - April 2014"
+		},
+		{
+			"name": "Gender",
+			"value": "Everyone"
+		},
+		{
+			"name": "Segment Type",
+			"value": "Consumers"
+		}
+	],
+	"modules": [
+		{
+			"name": "Breakfast Cereals",
+			"url": "breakfast-cereals",
+			"sections": [
+				{"name": "Brand Pyramid"},
+				{"name": "Brand Presence"},
+				{"name": "Needs"}
+			]
+		},
+		{
+			"name": "On The Go",
+			"url": "on-the-go",
+			"sections": [
+				{"name": "Brand Pyramid"},
+				{"name": "Brand Presence"},
+				{"name": "Needs"}
+			]
+		},
+		{
+			"name": "Non Dairy Milk",
+			"url": "non-dairy-milk",
+			"sections": [
+				{"name": "Brand Pyramid"},
+				{"name": "Brand Presence"},
+				{"name": "Needs"}
+			]
+		}
+	]
+}

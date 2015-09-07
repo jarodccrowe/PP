@@ -1,0 +1,64 @@
+/* ---------- Filter bar  ---------- */
+
+.filter-bar {
+	background: #fff;
+	border-radius: 0px;
+	// search box container
+	.search-field {
+		background: #fff;
+		height: 36px;
+		&:hover {
+			background:#f8f8f8;
+		}
+		input {
+			width:180px;
+			height: 36px;
+			font-size: 14px;
+			padding: 11px 0 11px 35px;
+			line-height: 14px;
+			text-indent:0;
+			&:focus {
+				text-indent:0;
+				background: transparent url(//cloud.pureprofile.com/images/filter-bar/search-16.png) scroll no-repeat 10px 12px !important;
+			}
+			&::-webkit-input-placeholder {
+				line-height: 14px;
+				font-size: 14px;
+				color: #333;
+			}
+		}
+	}
+	// button to add new content
+	.function-button {
+		.icon {
+			height: 36px;
+			a {
+				color:#666666;
+				line-height: 25px;
+				font-size:13px;
+			}
+		}
+	}
+	// dropdown menu
+	.dropdown {
+		border-left:1px solid #ccc;
+	}
+	.dropdown-toggle {
+		&:hover {
+			background:#f8f8f8;
+		}
+		&:active {
+			.box-shadow(none);
+		}
+	}
+	.dropdown-menu {
+		margin-top:1px;
+		margin-right:-1px;
+		.rounded-corners(0);
+		a {
+			&:hover {
+				background-color:@theme-colour-primary;
+			}
+		}
+	}
+}

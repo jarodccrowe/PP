@@ -1,0 +1,18 @@
+
+<div class="sticky-toolbar">
+  <div class="container-fluid">
+    <div class="row">
+      <div ng-repeat="filter in siteData.filtersGlobal" class="col-xs-2">
+        <div class="media">
+          <div ng-show="filter.image" class="pull-left"><img ng-src="/assets/images/{{filter.image}}" class="media-object"/></div>
+          <div class="media-body"><span class="text-default media-heading">{{filter.name}}:</span>
+            <div class="text-medium text-colour-secondary">{{filter.value}}</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-2">
+        <button type="button" data-toggle="modal" data-target="#globalFilters" class="btn btn-default"> <i class="fa fa-cog"></i>Global Filters</button>
+      </div>
+    </div>
+  </div>
+</div>

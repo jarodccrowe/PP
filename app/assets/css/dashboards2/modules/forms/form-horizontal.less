@@ -1,0 +1,42 @@
+.form-horizontal {
+
+  // Consistent vertical alignment of labels, radios, and checkboxes
+  .control-label,
+  .radio,
+  .checkbox,
+  .radio-inline,
+  .checkbox-inline {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 7px; // Default padding plus a border
+  }
+  // Account for padding we're adding to ensure the alignment and of help text
+  // and other content below items
+  .radio,
+  .checkbox {
+    min-height: 27px;
+  }
+
+  .form-control-static {
+    padding-top: 7px;
+  }
+
+  // Only right align form labels here when the columns stop stacking
+  @media (min-width: 768px) {
+    .control-label {
+      text-align: right;
+    }
+  }
+
+  .chosen-container {
+  	margin-bottom:0;
+  }
+
+  input[type="text"],
+  input[type="password"],
+  input[type="email"],
+  textarea {
+    width:100%;
+  }
+
+}

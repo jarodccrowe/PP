@@ -1,0 +1,575 @@
+{
+    "name": "Non Dairy Milk",
+    "url": "non-dairy-milk",
+    "type": "dashboard-view",
+    "description": "Non Dairy Milk Reports: Non dairy milk brands are tracked in the Sanitarium Milks Tracker which, for relevant context, includes both dairy and non dairy milk brands. The non dairy milk tracker focuses on two key consumer segments; NDM Consumers (consume at least one type of NDM monthly or more often), NDM Infrequent Consumers or Considerers (consume NDMs less often than monthly OR do not consume but would consider consuming an NDM in the next few months)",
+    "sections": [{
+        "name": "Brand Pyramid",
+        "description": "The Brand Pyramid reports on key brand health measures (respondents are shown pack images and brand names):",
+        "charts": [{
+            "chart": {
+                "type": "bar",
+                "backgroundColor": "transparent",
+                "marginTop": "20"
+            },
+            "title": {
+                "text": ""
+            },
+            "plotOptions": {
+                "series": {
+                    "dataLabels": {
+                        "enabled": true
+                    }
+                }
+            },
+            "yAxis": {
+                "title": {
+                    "text": "Percentage (%)"
+                }
+            },
+            "xAxis": {
+                "categories": [
+                    "Brand Awareness",
+                    "Consideration",
+                    "Past 12 months",
+                    "Past 3 months",
+                    "Most often",
+                    "Top 3 fav",
+                    "Brand love"
+                ]
+            },
+            "legend": {
+                "enabled": false
+            },
+            "tooltip": {
+                "backgroundColor": "#f2f2f2",
+                "borderColor": "#cccccc",
+                "borderRadius": 5,
+                "shadow": false,
+                "useHTML": true,
+                "headerFormat": "",
+                "pointFormat": "<h1 class='chart-tooltip'><center>{point.y}%</center></h3> <br/> {point.name}"
+            },
+            "exporting": {
+                "enabled": false
+            },
+            "credits": {
+                "enabled": false
+            },
+            "series": [{
+                "data": [{
+                    "color": "#f9a455",
+                    "y": 90,
+                    "name": "Brand awareness"
+                }, {
+                    "color": "#8082ec",
+                    "y": 55,
+                    "name": "Consideration"
+                }, {
+                    "color": "#62c948",
+                    "y": 43,
+                    "name": "Past 12 months"
+                }, {
+                    "color": "#79b3ee",
+                    "y": 35,
+                    "name": "Past 3 months"
+                }, {
+                    "color": "#ffca00",
+                    "y": 15,
+                    "name": "Most often"
+                }, {
+                    "color": "#f30824",
+                    "y": 41,
+                    "name": "Top 3 fav"
+                }, {
+                    "color": "#005eb1",
+                    "y": 18,
+                    "name": "Brand love"
+                }]
+            }]
+        }, {
+            "chart": {
+                "type": "line",
+                "backgroundColor": "transparent",
+                "marginTop": "50"
+            },
+            "title": {
+                "text": ""
+            },
+            "plotOptions": {
+                "line": {
+                    "lineWidth": 2,
+                    "shadow": false,
+                    "states": {
+                        "hover": {
+                            "lineWidth": 2
+                        }
+                    },
+                    "threshold": null
+                }
+            },
+            "yAxis": {
+                "title": {
+                    "text": "Percentage (%)"
+                }
+            },
+            "xAxis": {
+                "categories": [
+                    "Week 2 9 March 2014",
+                    "Week 3 16 March 2014",
+                    "Week 4 23 March 2014",
+                    "Week 5 31 March 2014"
+                ]
+            },
+            "legend": {
+                "align": "center",
+                "verticalAlign": "bottom",
+                "borderWidth": 0,
+                "margin": 20,
+                "reversed": true,
+                "symbolHeight": 15,
+                "symbolWidth": 15
+            },
+            "tooltip": {
+                "backgroundColor": "#f2f2f2",
+                "borderColor": "#cccccc",
+                "borderRadius": 5,
+                "shadow": false,
+                "useHTML": true,
+                "headerFormat": "",
+                "pointFormat": "<h1 class='chart-tooltip'><center>{point.y}%</center></h3> <br/> <center>{series.name}</center> <br/> <center>{point.category}</center>"
+            },
+            "exporting": {
+                "enabled": false
+            },
+            "credits": {
+                "enabled": false
+            },
+            "series": [{
+                "color": "#f9a455",
+                "data": [55, 57, 59, 62],
+                "name": "Brand awareness"
+            }, {
+                "color": "#8082ec",
+                "data": [42, 44, 43, 48],
+                "name": "Consideration"
+            }, {
+                "color": "#62c948",
+                "data": [83, 80, 86, 84],
+                "name": "Past 12 months"
+            }, {
+                "color": "#79b3ee",
+                "data": [66, 68, 72, 67],
+                "name": "Past 3 months"
+            }, {
+                "color": "#ffca00",
+                "data": [63, 61, 64, 62],
+                "name": "Most often"
+            }, {
+                "color": "#f30824",
+                "data": [86, 88, 87, 85],
+                "name": "Top 3 fav"
+            }, {
+                "color": "#005eb1",
+                "data": [80, 82, 81, 78],
+                "name": "Brand love"
+            }]
+        }],
+        "chartGlossary": [{
+            "term": "Brand Awareness",
+            "explanation": "which of these brands have you heard of before"
+        }, {
+            "term": "Consideration",
+            "explanation": "which of these brands would you consider having"
+        }, {
+            "term": "Past 12 month considerations",
+            "explanation": "which have you had in the past 12 months"
+        }, {
+            "term": "Past 3 month considerations",
+            "explanation": "which have you had in the past 2 months"
+        }, {
+            "term": "Most often",
+            "explanation": "which of these do you have most often (NB: most often is a single response, the context includes breakfast cereals as well as on the go brands)"
+        }, {
+            "term": "Top 3 fav",
+            "explanation": "number your top 3 favourite brands, 1 for your first favourite, 2 for your second and 3 for your third favourite (NB: “favourite brand” is asked in the context of breakfast cereals as well as on the go brands)"
+        }, {
+            "term": "Brand love",
+            "explanation": "a combination of brand have most often AND one of top 3 favourite brands"
+        }],
+        "chartFilters": [{
+            "name": "Time Period",
+            "options": [
+                "Rolling month",
+                "Rolling quarter",
+                "Rolling 6 months",
+                "Rolling year"
+            ]
+        }, {
+            "name": "Gender",
+            "options": [
+                "Everyone",
+                "Males",
+                "Females"
+            ]
+        }, {
+            "name": "Segment Type",
+            "options": [
+                "Consumers",
+                "Considerers"
+            ]
+        }]
+    }, {
+        "name": "Consumptions Frequency",
+        "description": "Consumption frequency reports how often people consume brands they have had in the past 3 months.",
+        "charts": [{
+            "chart": {
+                "type": "line",
+                "backgroundColor": "transparent",
+                "marginTop": "50"
+            },
+            "title": {
+                "text": ""
+            },
+            "plotOptions": {
+                "line": {
+                    "lineWidth": 2,
+                    "shadow": false,
+                    "states": {
+                        "hover": {
+                            "lineWidth": 2
+                        }
+                    },
+                    "threshold": null
+                }
+            },
+            "yAxis": {
+                "title": {
+                    "text": "Percentage (%)"
+                }
+            },
+            "xAxis": {
+                "categories": [
+                    "Week 2 9 March 2014",
+                    "Week 3 16 March 2014",
+                    "Week 4 23 March 2014",
+                    "Week 5 31 March 2014"
+                ]
+            },
+            "legend": {
+                "align": "center",
+                "verticalAlign": "bottom",
+                "borderWidth": 0,
+                "margin": 20,
+                "symbolHeight": 15,
+                "symbolWidth": 15
+            },
+            "tooltip": {
+                "backgroundColor": "#f2f2f2",
+                "borderColor": "#cccccc",
+                "borderRadius": 5,
+                "shadow": false,
+                "useHTML": true,
+                "headerFormat": "",
+                "pointFormat": "<h1 class='chart-tooltip'><center>{point.y}%</center></h3> <br/> <center>{series.name}</center> <br/> <center>{point.category}</center>"
+            },
+            "exporting": {
+                "enabled": false
+            },
+            "credits": {
+                "enabled": false
+            },
+            "series": [{
+                "color": "#f9a455",
+                "data": [55, 57, 59, 62],
+                "name": "Daily"
+            }, {
+                "color": "#8082ec",
+                "data": [42, 44, 43, 48],
+                "name": "Weekly"
+            }, {
+                "color": "#62c948",
+                "data": [83, 80, 86, 84],
+                "name": "Monthly"
+            }, {
+                "color": "#79b3ee",
+                "data": [66, 68, 72, 67],
+                "name": "Less than monthly"
+            }]
+        }],
+        "chartFilters": [{
+            "name": "Time Period",
+            "options": [
+                "Rolling month",
+                "Rolling quarter",
+                "Rolling 6 months",
+                "Rolling year"
+            ]
+        }, {
+            "name": "Gender",
+            "options": [
+                "Everyone",
+                "Males",
+                "Females"
+            ]
+        }, {
+            "name": "Segment Type",
+            "options": [
+                "Consumers",
+                "Considerers"
+            ]
+        }],
+        "metrics": [{
+            "name": "Daily",
+            "value": "18%",
+            "supplementary": "(n= 1,234)"
+        }, {
+            "name": "Weekly",
+            "value": "69%",
+            "supplementary": "(n= 1,234)"
+        }, {
+            "name": "Monthly",
+            "value": "10%",
+            "supplementary": "(n= 1,234)"
+        }, {
+            "name": "Less Than Monthly",
+            "value": "3%",
+            "supplementary": "(n= 1,234)"
+        }]
+    }, {
+        "name": "Brand Presence",
+        "description": "Brand Presence reports on measures that link to visibility / saliency of the brand:",
+        "charts": [{
+            "chart": {
+                "type": "line",
+                "backgroundColor": "transparent",
+                "marginTop": "50"
+            },
+            "title": {
+                "text": ""
+            },
+            "plotOptions": {
+                "line": {
+                    "lineWidth": 2,
+                    "shadow": false,
+                    "states": {
+                        "hover": {
+                            "lineWidth": 2
+                        }
+                    },
+                    "threshold": null
+                }
+            },
+            "yAxis": {
+                "title": {
+                    "text": "Percentage (%)"
+                }
+            },
+            "xAxis": {
+                "categories": [
+                    "Week 2 9 March 2014",
+                    "Week 3 16 March 2014",
+                    "Week 4 23 March 2014",
+                    "Week 5 31 March 2014"
+                ]
+            },
+            "legend": {
+                "align": "center",
+                "verticalAlign": "bottom",
+                "borderWidth": 0,
+                "margin": 20,
+                "symbolHeight": 15,
+                "symbolWidth": 15
+            },
+            "tooltip": {
+                "backgroundColor": "#f2f2f2",
+                "borderColor": "#cccccc",
+                "borderRadius": 5,
+                "shadow": false,
+                "useHTML": true,
+                "headerFormat": "",
+                "pointFormat": "<h1 class='chart-tooltip'><center>{point.y}%</center></h3> <br/> <center>{series.name}</center> <br/> <center>{point.category}</center>"
+            },
+            "exporting": {
+                "enabled": false
+            },
+            "credits": {
+                "enabled": false
+            },
+            "series": [{
+                "color": "#f9a455",
+                "data": [55, 57, 59, 62],
+                "name": "Spont brand awareness - first mention"
+            }, {
+                "color": "#8082ec",
+                "data": [42, 44, 43, 48],
+                "name": "Spont brand awareness - total mentions"
+            }, {
+                "color": "#62c948",
+                "data": [83, 80, 86, 84],
+                "name": "Ad recall"
+            }]
+        }],
+        "chartFilters": [{
+            "name": "Time Period",
+            "options": [
+                "Rolling month",
+                "Rolling quarter",
+                "Rolling 6 months",
+                "Rolling year"
+            ]
+        }, {
+            "name": "Gender",
+            "options": [
+                "Everyone",
+                "Males",
+                "Females"
+            ]
+        }, {
+            "name": "Segment Type",
+            "options": [
+                "Consumers",
+                "Considerers"
+            ]
+        }],
+        "chartGlossary": [{
+            "term": "Spont brand awareness",
+            "explanation": "first mention: thinking of breakfast cereals, which brands can you think of (first recorded)"
+        }, {
+            "term": "Spont brand awareness",
+            "explanation": "total mentions: thinking of breakfast cereals, which brands can you think of (all recorded)"
+        }, {
+            "term": "Comms recall",
+            "explanation": "brand prompted communication recall, respondents are asked to consider all comms they may have been exposed to across mediums."
+        }],
+        "metrics": [{
+            "name": "First mention",
+            "value": "18%",
+            "supplementary": "(n= 1,234)"
+        }, {
+            "name": "Total mentions",
+            "value": "69%",
+            "supplementary": "(n= 1,234)"
+        }, {
+            "name": "Ad recall",
+            "value": "10%",
+            "supplementary": "(n= 1,234)"
+        }]
+    }, {
+        "name": "Needs",
+        "description": "The Needs Reports track the reasons why people choose brands they had in the past 3 months based on their last consumption occasion.  Individual needs are grouped into themes for tracking and analysis. (Sanitarium brands only.)",
+        "charts": [{
+            "chart": {
+                "type": "line",
+                "backgroundColor": "transparent",
+                "marginTop": "50"
+            },
+            "title": {
+                "text": ""
+            },
+            "plotOptions": {
+                "line": {
+                    "lineWidth": 2,
+                    "shadow": false,
+                    "states": {
+                        "hover": {
+                            "lineWidth": 2
+                        }
+                    },
+                    "threshold": null
+                }
+            },
+            "yAxis": {
+                "title": {
+                    "text": "Percentage (%)"
+                }
+            },
+            "xAxis": {
+                "categories": [
+                    "Week 2 9 March 2014",
+                    "Week 3 16 March 2014",
+                    "Week 4 23 March 2014",
+                    "Week 5 31 March 2014"
+                ]
+            },
+            "legend": {
+                "align": "center",
+                "verticalAlign": "bottom",
+                "borderWidth": 0,
+                "margin": 20,
+                "symbolHeight": 15,
+                "symbolWidth": 15
+            },
+            "tooltip": {
+                "backgroundColor": "#f2f2f2",
+                "borderColor": "#cccccc",
+                "borderRadius": 5,
+                "shadow": false,
+                "useHTML": true,
+                "headerFormat": "",
+                "pointFormat": "<h1 class='chart-tooltip'><center>{point.y}%</center></h3> <br/> <center>{series.name}</center> <br/> <center>{point.category}</center>"
+            },
+            "exporting": {
+                "enabled": false
+            },
+            "credits": {
+                "enabled": false
+            },
+            "series": [{
+                "color": "#f9a455",
+                "data": [55, 57, 59, 62],
+                "name": "Nutritious sensibility"
+            }, {
+                "color": "#8082ec",
+                "data": [42, 44, 43, 48],
+                "name": "Indulgence"
+            }, {
+                "color": "#62c948",
+                "data": [83, 80, 86, 84],
+                "name": "Sensory enjoyment"
+            }, {
+                "color": "#79b3ee",
+                "data": [66, 68, 72, 67],
+                "name": "Light & snackable"
+            }, {
+                "color": "#ffca00",
+                "data": [63, 61, 64, 62],
+                "name": "Easy & portable"
+            }, {
+                "color": "#f30824",
+                "data": [86, 88, 87, 85],
+                "name": "Comforting & filling"
+            }, {
+                "color": "#005eb1",
+                "data": [80, 82, 81, 78],
+                "name": "Simply natural"
+            }, {
+                "color": "#8082ec",
+                "data": [80, 82, 81, 78],
+                "name": "Enhanced nutrition"
+            }]
+        }],
+        "chartFilters": [{
+            "name": "Time Period",
+            "options": [
+                "Rolling month",
+                "Rolling quarter",
+                "Rolling 6 months",
+                "Rolling year"
+            ]
+        }, {
+            "name": "Gender",
+            "options": [
+                "Everyone",
+                "Males",
+                "Females"
+            ]
+        }, {
+            "name": "Segment Type",
+            "options": [
+                "Consumers",
+                "Considerers"
+            ]
+        }]
+    }]
+}

@@ -1,0 +1,76 @@
+//Horizontal metrics
+
+.horizontal-metrics{
+	margin-top: 5px;
+	overflow: visible;
+
+	& .metric-title{
+		font-size: @baseFontSize + .9em;
+		font-weight: normal;
+	}
+
+	& .metric-description{
+		font-size: @baseFontSize;
+		min-height: 40px;
+	}
+
+	& .metric-number{
+		font-size: @baseFontSize + 3.5em;
+		line-height: @baseFontSize - .3em;
+
+		&.small{
+			font-size: @baseFontSize + 2.5em;
+			line-height: @baseFontSize + .4em;
+		}
+
+		img{
+			padding-right: 10px;
+			margin-top: -10px;
+			width:46px;
+		}
+	}
+	& .metric-base{
+		text-indent: 50px;
+		span{
+			font-size: @baseFontSize;
+			color: @text-grey-light;
+		}
+		&.small {
+			text-indent:0px;
+		}
+	}
+	.clearfix();
+}
+
+//
+// When metrics are put inside a list, they need to vertically centered.
+// This is being handled by a wrapper class to be placed on the <li>
+//
+.list-item-metric {
+	vertical-align:middle;
+}
+
+//
+// Small accompanying text for metric numbers
+//
+.metric-label {
+	&.metric-label-vertical {
+		height:30px;
+	}
+}
+
+@media (max-width:767px) {
+
+	.horizontal-metrics {
+		.metric-description {
+			min-height:0;
+		}
+		.metric-number {
+			margin:-10px 0;
+		}
+		.metric-base {
+			margin-bottom:20px;
+		}
+	}
+
+}

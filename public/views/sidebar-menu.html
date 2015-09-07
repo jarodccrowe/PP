@@ -1,0 +1,13 @@
+
+<div class="sidebar hidden-print">
+  <div id="sideBarNav" class="inner">
+    <ul class="entity-list list-unstyled">
+      <li ng-repeat="module in siteData.modules"><a ng-href="/#/{{module.url}}" ng-class="{active:isActiveTab($index)}" ng-click="onClickTab($index)">{{module.name}}</a>
+        <ul ng-class="{active:isActiveTab($index)}" class="sidebar-submenu list-unstyled text-small">
+          <li ng-repeat="section in module.sections"><a href="#">{{section.name}}</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  <div class="sidebar-push"></div>
+</div>

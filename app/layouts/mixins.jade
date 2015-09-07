@@ -1,0 +1,18 @@
+
+mixin appIcon(href, src)
+	.app-image-holder
+		.app-image
+			a(href=href)
+				img(src=src)
+
+mixin appName(href, name)
+	.text-holder
+		h3
+			a(href=href)= name
+
+mixin appNavIcon(href, src, name)
+	li
+		a(href=href)
+			span.icons-16-apps
+				img(src=src, alt=name)
+			=name

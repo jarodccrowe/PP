@@ -1,0 +1,32 @@
+.table-hover-rows {
+	tr {
+		&:hover {
+			td {
+				cursor:pointer;
+				background:#f8f8f8;
+			}
+		}
+	}
+}
+
+//cell labels
+td {
+	&.cell-label{
+
+		&.blue{
+			background: @white url("../images/blue.gif") scroll repeat-y 0 0;
+		}
+
+		&.grey{
+			background: @white url("../images/grey.gif") scroll repeat-y 0 0;
+		}
+
+		&.red{
+			background: @white url("../images/red.gif") scroll repeat-y 0 0;
+		}
+
+		&.orange{
+			background: @white url("../images/orange.gif") scroll repeat-y 0 0;
+		}
+	}
+}

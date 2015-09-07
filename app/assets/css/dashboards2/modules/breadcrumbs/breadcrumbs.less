@@ -1,0 +1,19 @@
+/*------------------ Breadcrumbs ------------------*/
+
+.breadcrumb {
+	background-color:transparent;
+	padding-left:0;
+	.rounded-corners(0);
+	& > li + li {
+		&:before {
+			content: "\203A";
+			color: #8c8c8c;
+		}
+	}
+	& > .active {
+		color:#666;
+	}
+	a {
+		text-decoration:underline;
+	}
+}

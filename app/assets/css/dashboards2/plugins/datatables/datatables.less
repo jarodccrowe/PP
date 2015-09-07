@@ -1,0 +1,104 @@
+.dataTables_wrapper {
+
+	thead {
+		background:@DtHeaderBgColour;
+	}
+	th {
+		padding:10px 8px;
+		border-color:@DtBorderColour;
+		border-style:solid;
+		border-width:1px 1px 2px 1px;
+		outline: none;
+		text-align: center;
+		&.dt-no-padding {
+			padding:0;
+		}
+		&.dt-no-border {
+			border-width:0;
+		}
+		&.dt-no-border-bottom {
+			border-bottom-width:0;
+		}
+		&.dt-img-logo {
+			width:150px;
+			background-color:@white;
+			&:last-child {
+				background-color:@greyB2;
+			}
+			img {
+				width:150px;
+			}
+		}
+		&:active,
+		&:visited {
+			outline:none;
+		}
+	}
+	td {
+		padding:8px;
+		border:1px solid @DtBorderColour;
+		background-color:@DtCellBg;
+		text-align:center;
+		&:first-child {
+			text-align:left;
+		}
+	}
+	.datatable {
+		width:100%;
+		margin:20px 0;
+		font-size:1.2em;
+		border-collapse:collapse;
+		border-bottom:2px solid @DtBorderColour;
+	}
+	.datatable-img {
+		width:100%;
+		height:100%;
+	}
+	// Sorting icons
+	.ui-icon {
+		display: block;
+		text-indent: -99999px;
+		overflow: hidden;
+		width: 16px;
+		height: 16px;
+		background-repeat: no-repeat;
+	}
+	.ui-state-default {
+		.ui-icon {
+			background-image:url(/iga/images/icons/datatable-icons.png);
+		}
+	}
+	.ui-icon-carat-2-n-s {
+		background-position: -128px 0;
+	}
+	.ui-icon-triangle-1-n {
+		background-position: 0 -16px;
+	}
+	.ui-icon-triangle-1-s {
+		background-position: -64px -16px;
+	}
+	.fg-toolbar {
+		display:none;
+	}
+}
+
+.DataTables_sort_wrapper {
+	position: relative;
+	padding-right: 20px;
+	cursor: pointer;
+}
+
+.DataTables_sort_icon {
+	position: absolute;
+	top: 50%;
+	margin-top: -8px;
+	right: 0;
+}
+
+.dataTables_filter {
+	display:none;
+}
+
+.dataTables_length {
+	display:none;
+}

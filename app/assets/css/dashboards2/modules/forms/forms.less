@@ -1,0 +1,53 @@
+.form-inline{
+	.form-group{
+		width: 100%;
+	}
+}
+
+//Input styling
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea {
+	background:@white;
+	border: @border;
+	.rounded-corners(3px);
+	.box-shadow(none);
+	color: @greyDarker;
+	font-size: @baseFontSize;
+	height: 35px;
+	padding: 4px 6px 3px;
+	
+	&:focus{
+		color: @black;
+		outline: 0;
+	}
+		
+	&::-webkit-input-placeholder { /* WebKit browsers */
+    	color: @greyLight;
+	}
+	
+	&:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+	    color: @greyLight;
+	}
+	
+	&::-moz-placeholder { /* Mozilla Firefox 19+ */
+	    color: @greyLight;
+	}
+	
+	&:-ms-input-placeholder { /* Internet Explorer 10+ */
+	    color: @greyLight;
+	}
+
+	&.error{
+		background:@bg-grey url(//cloud.pureprofile.com/images/inifinity-v2/rego/rego-error.png) no-repeat 95% center;
+	}
+	
+	&.ok{
+		background:@bg-grey url(//cloud.pureprofile.com/images/inifinity-v2/rego/rego-approved.png) no-repeat 95% center;
+	}
+	
+	&.warning{
+		background:@bg-grey url(//cloud.pureprofile.com/images/inifinity-v2/rego/rego-warning.png) no-repeat 95% center;
+	}
+}

@@ -1,0 +1,46 @@
+extends ../layouts/layout-default
+
+.page-header.page-header-bg-img(style="background-image:url({{brandData.pageHeaderImage}});")
+	.container.container-dashboard
+
+.dashboard-section
+	.container.container-dashboard
+		.row
+			.col-md-8.col-md-offset-2
+				.mod-box.auth-box
+					.box-content
+						h1 Log into your account
+						p Enter your details to log into your business account:
+						span.hr
+						form(action="../single/home.html", class="form form-horizontal")
+							.form-group
+								.col-md-6
+									.control-group
+										.controls
+											.input-group
+												span.input-group-addon
+													span.icons-20
+														img(src="//cloud.pureprofile.com/images/inifinity-v2/rego/rego-email-20.png")
+												input(type="text", placeholder="Email address", class="form-control")
+								.col-md-6
+									.control-group
+										.controls
+											.input-group
+												span.input-group-addon
+													span.icons-20
+														img(src="//cloud.pureprofile.com/images/inifinity-v2/rego/rego-password-20.png")
+												input(type="password", placeholder="Password", class="form-control")
+							.form-group
+								.col-md-6
+									.help-block
+										.checkbox
+											label Remember me
+												input(type="checkbox")
+								.col-md-6
+									.help-block
+										a(href="forgot-password.html") Forgot your password?
+							span.hr
+							.help-block.small
+								p.text-medium.text-center You agree to accessing this report on the condition that you will treat the information contained in it as confidential and will not use, copy, reproduce, disclose or otherwise deal with the information contained in the report to any third party, other than Metcash Trading Limited.
+							.text-center
+								button(type="submit").btn.btn-default.top20 Log in

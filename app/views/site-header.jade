@@ -1,0 +1,16 @@
+.page-header.page-header-bg-img.hidden-print(style="background-image:url({{siteData.pageHeaderImage}});")
+  .dashboard-logo
+    .logo-container
+      img(ng-src="{{siteData.clientLogo}}", ng-alt="{{siteData.name}}")
+  .dashboard-summary
+    h1.dashboard-title {{siteData.name}}
+    p.text-dark {{siteData.leadParagraph}}
+    ul.list-summary.list-unstyled.text-default.text-dark.list-inline
+      li
+        i.fa.fa-repeat.fa-flip-horizontal
+        strong Last updated:
+        span {{siteData.lastUpdated}}
+      li
+        i.fa.fa-calendar
+        strong Showing data for:
+        span  {{siteData.dateRange}}

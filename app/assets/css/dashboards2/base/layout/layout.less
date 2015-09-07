@@ -1,0 +1,83 @@
+// Header
+.page-header {
+	margin: 0;
+	position: relative;
+	text-align:left;
+	z-index: 3;
+	&.page-header-bg-img {
+		height:240px;
+		background-size: cover;
+		background-position: top left;
+		background-repeat: no-repeat;
+		border-bottom:none;
+	}
+	.logo-container {
+		height: 177px;
+		width: 177px;
+		img {
+			height: 165px;
+			width: 165px;
+		}
+		border: @border;
+		padding: 5px;
+		background: #fff;
+	}
+	.list-summary {
+		margin-left:0;
+		li {
+			margin-left: 20px;
+			&:first-child {
+				margin-left:0px;
+				padding-left:0;
+			}
+		}
+	}
+	.lead {
+		font-size: @baseFontSize + 0.4em;
+	}
+}
+.header-logo {
+	margin-top: -18px;
+}
+.dashboard-logo {
+	position: absolute;
+	top: 25px;
+	left:25px;
+	background-color: white;
+	img {
+		width: auto;
+		height: auto;
+		float: none;
+		margin-top: 0;
+	}
+	&.long {
+		top:100px;
+		background-color:transparent;
+		.logo-container {
+			width:624px;
+			height:87px;
+		}
+	}
+}
+.dashboard-summary {
+	position: absolute;
+	top: 25px;
+	left: 240px;
+}
+.dashboard-title {
+	text-transform: none;
+	font-size: @baseFontSize + 2.7em;
+}
+
+@media screen and (max-width:767px) {
+
+	.dashboard-logo {
+		&.long {
+			width:90%;
+			.logo-container {
+				width:inherit;
+			}
+		}
+	}
+
+}

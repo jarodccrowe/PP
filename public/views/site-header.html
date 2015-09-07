@@ -1,0 +1,14 @@
+
+<div style="background-image:url({{siteData.pageHeaderImage}});" class="page-header page-header-bg-img hidden-print">
+  <div class="dashboard-logo">
+    <div class="logo-container"><img ng-src="{{siteData.clientLogo}}" ng-alt="{{siteData.name}}"/></div>
+  </div>
+  <div class="dashboard-summary">
+    <h1 class="dashboard-title">{{siteData.name}}</h1>
+    <p class="text-dark">{{siteData.leadParagraph}}</p>
+    <ul class="list-summary list-unstyled text-default text-dark list-inline">
+      <li><i class="fa fa-repeat fa-flip-horizontal"></i><strong>Last updated:</strong><span>{{siteData.lastUpdated}}</span></li>
+      <li><i class="fa fa-calendar"></i><strong>Showing data for:</strong><span> {{siteData.dateRange}}</span></li>
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,57 @@
+//Simple metric
+
+.simple-metric{
+	text-align: center;
+	width: 200px;
+	height: 140px;
+	float: left;
+	margin-bottom: 10px;
+	
+	//Full width metric
+
+	&.full-width{
+		width: 365px;
+		height: 90px;
+		margin: 0 auto 10px;
+		float: none;
+
+		& .metric-number{
+			margin-left: 20px;
+		}
+
+		span.line{
+			width:100%;
+		}
+	}
+
+	//Standard application
+
+	& .metric-title{
+		font-size: @baseFontSize + .9em;
+		font-weight: normal;
+	}
+
+	& .metric-description{
+		font-size: @baseFontSize - .1px;
+		width: 160px;
+		margin: 0 auto;
+	}
+
+	& .metric-number{
+		font-size: @baseFontSize + 2.7em;
+		line-height: @baseFontSize;
+		color: @theme-colour-primary;
+
+		img{
+			padding-right: 10px;
+			margin-top: -10px;
+		}
+	}
+
+	span.line{
+		height: 2px;
+		width: 60px;
+		background-color: @theme-colour-primary;
+		margin: 7px auto 10px;
+	}
+}

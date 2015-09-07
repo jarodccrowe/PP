@@ -1,0 +1,52 @@
+.auth-box {
+	position: relative;
+	z-index: 4;
+	margin-top: -90px;
+	.box-shadow(1px, 1px, 5px, 1px, #a4a4a4);
+	.box-content {
+		padding: 35px;
+		border-top:none;
+		border-left:none;
+		border-right:none;
+		.span4 {
+			width:260px;
+		}
+		.cols {
+			// 2 Columns with a margin in between
+			&.cols-margin {
+				.span3 {
+					width:265px;
+					&:first-child {
+						margin-right:20px;
+					}
+				}
+			}
+		}
+		.submit-text {
+			text-align: center;
+			padding: 0px;
+			width: 308px;
+			margin: 20px auto 0;
+			font-size: @baseFontSize - 2px;
+		}
+		h4 {
+			font-size: @baseFontSize + 2px;
+			line-height: @baseFontSize + 2px;
+			text-transform: uppercase;
+			color: @text-grey-dark;
+			margin-bottom: 10px;
+		}
+		form.listing-app-form .controls {
+			.chosen-container {
+				width:100%;
+				min-width: 282px;
+				max-width: 282px;
+			}
+		}
+	}
+	.form-horizontal {
+		.checkbox {
+			padding-top:0;
+		}
+	}
+}

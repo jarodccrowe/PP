@@ -1,0 +1,16 @@
+.sticky-toolbar {
+	position: fixed;
+	top: -70px;
+	left: 0;
+	z-index: 1;
+	height: 70px;
+	width: 100%;
+	padding: 15px 5px 5px 240px;
+	background-color:@theme-grey;
+	border-bottom: 2px solid darken(@theme-grey, 15%);
+	overflow: hidden;
+	.animate(top 0.3s ease-in-out);
+	&.is-shown {
+		top: 0;
+	}
+}

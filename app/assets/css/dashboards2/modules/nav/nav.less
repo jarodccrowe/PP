@@ -1,0 +1,51 @@
+
+// dashboard tab navigation
+.nav {
+	margin-bottom:0;
+}
+
+.nav-tabs {
+	position: relative;
+	top: 1px;
+	border-bottom:none;
+	li {
+		margin-bottom:0;
+	}
+	> li {
+		> a {
+			font-size: @baseFontSize - .1em;
+			padding: 10px 15px;
+			border:none;
+			.rounded-corners(0);
+			&:hover {
+				background-color: @white;
+			}
+		}
+		&.active {
+			> a {
+				//border: @border;
+				border-bottom-color:transparent;
+				padding: 10px 18px;
+				background-color: #ededed;
+				&:hover{
+					background-color: #ededed;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width:927px) {
+	.nav-tabs {
+		margin-bottom:15px;
+		> li {
+			width:100%;
+			&.active > a {
+				border-bottom:1px solid #ccc;
+				&:hover {
+					border-bottom:1px solid #ccc;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,20 @@
+//Standard list styling
+.list-standard{
+	padding-left: 15px;
+	font-size: @baseFontSize + .1em;
+	list-style: none;
+	padding:0;
+	margin:0;
+
+	li { 
+	    text-indent: -16px;
+	    padding: 0 0 5px 16px;
+
+		&:before {
+		    content: "\2022";
+		    color: @theme-colour-primary;
+		    margin-right: 10px;
+		    font-size: @baseFontSize
+		}
+	}
+}

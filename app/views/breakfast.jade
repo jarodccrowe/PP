@@ -1,0 +1,81 @@
+.inner
+  //- Dashboard header
+  .section-dashboard.section-header.grey
+    .container.container-dashboard
+      .clearfix
+        .pull-left
+          h1.section-title.text-case-reset {{brandData.name}}
+          span.line.blue
+        .pull-right
+          button.btn.btn-default(type="button", data-toggle="modal", data-target="#globalFilters")
+            i.fa.fa-cog
+            | Global Filters
+      p.lead.text-dark.text-default {{brandData.description}}
+      h6.text-uppercase Showing results for:
+      .row
+        .col-xs-2(ng-repeat="filter in siteData.filtersGlobal")
+          .media
+            .pull-left(ng-show="filter.image")
+              img.media-object(ng-src="/assets/images/{{filter.image}}")
+            .media-body
+              span.text-default.media-heading {{filter.name}}:
+              .text-medium.text-colour-secondary {{filter.value}}
+  //- sticky toolbar
+  div(sticky-toolbar)
+
+  //- Dashboard sections
+  .section-dashboard(ng-repeat="section in brandData.sections")
+    .container.container-dashboard
+      //- section header
+      .clearfix
+        .pull-left
+          h2.section-title {{section.name}}
+          span.line.blue
+        .pull-right
+          button.btn.btn-blue(type="button", data-toggle="collapse", data-target="#{{section.name | camelize}}Filters")
+            i.fa.fa-cog
+            | Chart Filters
+      //- Chart filters
+      .chart-filters.clearfix.collapse(id="{{section.name | camelize}}Filters")
+        .chart-filter-options.clearfix(ng-repeat="chartFilter in section.chartFilters")
+          p {{chartFilter.name}}
+          ul(class="nav nav-pills nav-pills-small text-uppercase nav-pills-chart-filters pull-left")
+            li(ng-repeat="option in chartFilter.options")
+              a(href="") {{option}}
+        .drop-arrow.top.right
+      p.lead.text-default {{section.description}}
+      //- Chosen filter options
+      h6.text-uppercase Showing results for:
+      .row
+        .col-xs-2(ng-repeat="filter in section.chartFilters")
+          .media
+            .pull-left
+              img.media-object(src="")
+            .media-body
+              span.text-default.media-heading {{filter.name}}:
+              .text-medium.text-colour-secondary {{filter.options[0]}}
+      span.hr-small
+      //- Metrics
+      .row(ng-show="section.metrics")
+        .col-xs-3(ng-repeat="metric in section.metrics")
+          h6.text-uppercase.text-lighter {{metric.name}}
+          span.metric.metric-blue {{metric.value}}
+          span.text-medium(ng-show="metric.supplementary") {{metric.supplementary}}%
+      //- Help section
+      .row(ng-show="section.chartGlossary")
+        .span.hr-transparent
+        .col-xs-12
+          p
+            a(data-toggle="collapse", data-target="#{{section.name | camelize}}Glossary")
+              i.pp-question-circle-alt &nbsp;
+              | help with chart terms
+      .well.collapse.relative(id="{{section.name | camelize}}Glossary", ng-show="section.chartGlossary")
+        button.close(aria-hidden="true", data-toggle="collapse", data-target="#{{section.name | camelize}}Glossary") &times;
+        ul.list-unstyled.text-default
+          li(ng-repeat="term in section.chartGlossary") 
+            strong.text-dark {{term.term}}
+            | &nbsp;- {{term.explanation}}
+      //- Section charts
+      div(ng-repeat="chart in section.charts")
+        chart(value="chart")
+        span.hr

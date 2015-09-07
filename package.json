@@ -1,0 +1,28 @@
+{
+  "name": "custom-dashboard",
+  "description": "Custom Infinity Platform Dashboard Application",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "body-parser": "^1.13.1",
+    "express": "~4.13.0",
+    "method-override": "~2.3.3",
+    "jade": "1.3.0",
+    "http-proxy": "0.8.7",
+    "stylus": "*"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "grunt-contrib-jshint": "~0.10.0",
+    "grunt-contrib-nodeunit": "~0.3.3",
+    "grunt-contrib-uglify": "~0.4.0",
+    "grunt-contrib-coffee": "*",
+    "grunt-contrib-jade": "*",
+    "grunt-contrib-less": "*",
+    "grunt-contrib-clean": "^0.5.0",
+    "grunt-contrib-copy": "^0.5.0",
+    "grunt-develop": "*",
+    "matchdep": "*",
+    "grunt-contrib-watch": "^0.6.1"
+  }
+}

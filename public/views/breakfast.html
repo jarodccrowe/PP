@@ -1,0 +1,81 @@
+
+<div class="inner">
+  <div class="section-dashboard section-header grey">
+    <div class="container container-dashboard">
+      <div class="clearfix">
+        <div class="pull-left">
+          <h1 class="section-title text-case-reset">{{brandData.name}}</h1><span class="line blue"></span>
+        </div>
+        <div class="pull-right">
+          <button type="button" data-toggle="modal" data-target="#globalFilters" class="btn btn-default"><i class="fa fa-cog"></i>Global Filters</button>
+        </div>
+      </div>
+      <p class="lead text-dark text-default">{{brandData.description}}</p>
+      <h6 class="text-uppercase">Showing results for:</h6>
+      <div class="row">
+        <div ng-repeat="filter in siteData.filtersGlobal" class="col-xs-2">
+          <div class="media">
+            <div ng-show="filter.image" class="pull-left"><img ng-src="/assets/images/{{filter.image}}" class="media-object"/></div>
+            <div class="media-body"><span class="text-default media-heading">{{filter.name}}:</span>
+              <div class="text-medium text-colour-secondary">{{filter.value}}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div sticky-toolbar="sticky-toolbar"></div>
+  <div ng-repeat="section in brandData.sections" class="section-dashboard">
+    <div class="container container-dashboard">
+      <div class="clearfix">
+        <div class="pull-left">
+          <h2 class="section-title">{{section.name}}</h2><span class="line blue"></span>
+        </div>
+        <div class="pull-right">
+          <button type="button" data-toggle="collapse" data-target="#{{section.name | camelize}}Filters" class="btn btn-blue"><i class="fa fa-cog"></i>Chart Filters</button>
+        </div>
+      </div>
+      <div id="{{section.name | camelize}}Filters" class="chart-filters clearfix collapse">
+        <div ng-repeat="chartFilter in section.chartFilters" class="chart-filter-options clearfix">
+          <p>{{chartFilter.name}}</p>
+          <ul class="nav nav-pills nav-pills-small text-uppercase nav-pills-chart-filters pull-left">
+            <li ng-repeat="option in chartFilter.options"><a href="">{{option}}</a></li>
+          </ul>
+        </div>
+        <div class="drop-arrow top right"></div>
+      </div>
+      <p class="lead text-default">{{section.description}}</p>
+      <h6 class="text-uppercase">Showing results for:</h6>
+      <div class="row">
+        <div ng-repeat="filter in section.chartFilters" class="col-xs-2">
+          <div class="media">
+            <div class="pull-left"><img src="" class="media-object"/></div>
+            <div class="media-body"><span class="text-default media-heading">{{filter.name}}:</span>
+              <div class="text-medium text-colour-secondary">{{filter.options[0]}}</div>
+            </div>
+          </div>
+        </div>
+      </div><span class="hr-small"></span>
+      <div ng-show="section.metrics" class="row">
+        <div ng-repeat="metric in section.metrics" class="col-xs-3">
+          <h6 class="text-uppercase text-lighter">{{metric.name}}</h6><span class="metric metric-blue">{{metric.value}}</span><span ng-show="metric.supplementary" class="text-medium">{{metric.supplementary}}%</span>
+        </div>
+      </div>
+      <div ng-show="section.chartGlossary" class="row">
+        <div class="span hr-transparent"></div>
+        <div class="col-xs-12">
+          <p><a data-toggle="collapse" data-target="#{{section.name | camelize}}Glossary"><i class="pp-question-circle-alt">&nbsp;</i>help with chart terms</a></p>
+        </div>
+      </div>
+      <div id="{{section.name | camelize}}Glossary" ng-show="section.chartGlossary" class="well collapse relative">
+        <button aria-hidden="true" data-toggle="collapse" data-target="#{{section.name | camelize}}Glossary" class="close">&times;</button>
+        <ul class="list-unstyled text-default">
+          <li ng-repeat="term in section.chartGlossary"> <strong class="text-dark">{{term.term}}</strong>&nbsp;- {{term.explanation}}</li>
+        </ul>
+      </div>
+      <div ng-repeat="chart in section.charts">
+        <chart value="chart"></chart><span class="hr"></span>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,105 @@
+
+// ==================================================
+// Font size adjustments
+// ==================================================
+.text-large {
+	font-size:@baseFontSize + 1.3em;
+}
+.text-large-copy {
+	font-size:@baseFontSize + .3em;
+}
+.text-medium {
+	font-size:@baseFontSize - .2em;
+}
+.text-small {
+	font-size:@baseFontSize - .5em;
+}
+// ==================================================
+// Force some text to render in the base font size
+// even when not wrapped in an element with a set
+// font size
+// ==================================================
+.text-normal {
+	font-size:@baseFontSize;
+	font-weight:normal;
+}
+
+// ==================================================
+// Emulate font emphasis by greyscale adjustments
+// ==================================================
+.text-lighter {
+	color:@text-grey-lighter;
+}
+
+.text-light {
+	color:@text-grey-light;
+}
+
+.text-dark {
+	color:@text-grey-dark;
+}
+
+// ==================================================
+// Font colours
+// ==================================================
+.text-colour-primary {
+	color:@theme-colour-primary !important;
+}
+
+.text-colour-secondary {
+	color:@theme-colour-secondary !important;
+}
+
+
+// ==================================================
+// Text alignment
+// ==================================================
+.text-left {
+	text-align: left !important;
+}
+
+.text-right {
+	text-align: right !important;
+}
+
+.text-center {
+	text-align: center !important;
+}
+
+
+// ==================================================
+// Font size adjustments
+// ==================================================
+.text-0x5 {font-size:0.5em;}
+.text-0x8 {font-size:0.8em;}
+.text-0x9 {font-size:0.9em;}
+.text-1x {font-size:1em;}
+.text-1x1 {font-size:1.1em;}
+.text-1x2 {font-size:1.2em;}
+.text-1x3 {font-size:1.3em;}
+.text-1x4 {font-size:1.4em;}
+.text-1x5 {font-size:1.5em;}
+.text-2x {font-size:2em;}
+.text-2x5 {font-size:2.5em;}
+.text-3x {font-size:3em;}
+
+
+// ==================================================
+// Text transforming classes
+// ==================================================
+.text-strong {
+	font-weight:bold;
+	color:@text-grey-dark;
+}
+
+.text-italic {
+	font-style:italic;
+}
+
+.text-uppercase {
+	text-transform:uppercase;
+}
+
+.text-case-reset {
+	text-transform:none;
+}

@@ -1,0 +1,187 @@
+//Page variable color functions//
+
+//Default color variable when no alt color class is set to an element://
+@altColor:#ed1b2d;
+
+//lighten
+
+.bg-light (@altColor){
+	 background-color: lighten(@altColor, 5%);
+	 border-color: darken(@altColor, 10%);
+	 
+	 &:hover{
+		  background-color:darken(@altColor, 5%);
+	 }
+}
+
+
+//Background color function//
+.alt-bg (@altColor){
+   border-color: darken(@altColor, 10%) !important; 
+   background-color: @altColor !important;
+   background-image:none;
+   
+   &:hover {
+		border-color: darken(@altColor, 20%) !important;
+		background-color: darken(@altColor, 10%) !important;
+		background-image:none;
+   }
+}
+
+//Nav bg
+.alt-nav (@altColor){
+   border-color: darken(@altColor, 10%) !important; 
+   background: @altColor !important;
+   &:hover {
+       border-color: darken(@altColor, 10%) !important; 
+       background: @altColor !important;
+   }
+}
+
+//Text color function//
+.alt-color(@altColor){
+    color: @altColor !important;    
+}
+
+//Left nav color function//
+.left-nav-func(@altColor){
+    &.left-nav a:hover,
+    &.left-nav-icon a:hover,
+    &.left-nav-icon a.selected{
+        .alt-nav(@altColor);
+        text-decoration:none;
+    	color:@white;
+    }
+}
+
+//Table hover color function//
+.table-list-func(@altColor){
+    &.list-view tbody tr:hover td{
+       .alt-color(@altColor);
+       background-color: @backgroundLight;
+       cursor: pointer;
+    }
+}
+
+//Round corner function//
+.rounded-corners(@radius: 10px) {
+  border-radius: @radius;
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+}
+
+//Gradiant background color function//
+.gradiant(@top-colour:#fdfdfd, @bottom-colour:#f1f1f1) {
+	background: -webkit-linear-gradient(@top-colour, @bottom-colour);
+	background: -moz-linear-gradient(@top-colour, @bottom-colour);
+	background: linear-gradient(@top-colour, @bottom-colour);
+	-pie-background: linear-gradient(@top-colour, @bottom-colour);
+	behavior: url(http://dev.businessmanager.pureprofile.com/Content/PIE-1.0beta5/pie.htc);
+}
+
+//Box shadow
+
+.box-shadow(@x-length:3px, @y-length:5px, @blur: 20px, @spread: 3px, @shadow-color: @greyLight){
+	-webkit-box-shadow:  @x-length @y-length @blur @spread @shadow-color;
+     box-shadow:  @x-length @y-length @blur @spread @shadow-color;
+}
+
+.box-shadow(@a:none){
+	-moz-box-shadow: @arguments;
+	-webkit-box-shadow: @arguments;
+    box-shadow:  @arguments;
+}
+
+// Transitions
+.animate(@a: 3) {
+	-moz-transition:@arguments;
+	-webkit-transition:@arguments;
+	-ms-transition:@arguments;
+	-o-transition:@arguments;
+	transition:@arguments;
+}
+.animateMultiple(@a: 2) {
+	-moz-transition:@arguments;
+	-webkit-transition:@arguments;
+	-ms-transition:@arguments;
+	-o-transition:@arguments;
+	transition:@arguments;
+}
+
+//icon holder //
+
+.ico-holder-func(@hover-margin: 0){
+
+	& .ico-holder{
+		float:left;
+		height:16px;
+		width:16px;
+		overflow:hidden;
+		
+		& img{
+			display:block;
+			margin-top:@hover-margin;
+		}
+		
+		&.hover {
+			&:hover{
+				& img{
+					display:block;
+					margin-top:-16px;
+				}
+			}
+		}
+	}
+
+	//& a:hover .icon .ico-holder img,
+	//& a.selected .icon .ico-holder img{
+	//    margin-top:@hover-margin !important;
+	//}
+}
+
+.small-icon-func(@margin: 0){
+	display: block;
+	float: left;
+	height:16px;
+	width:16px;
+	overflow: hidden;
+	margin-right: 5px;
+	
+	& img{
+		margin-top:@margin;
+	}
+
+	& .ico{
+		float: left;
+		height:16px;
+		width:16px;
+		overflow: hidden;
+		margin: 0 5px 0 0;
+		
+		
+		& img{
+			margin-top:@margin;
+		}
+	}
+}
+
+// create a horizontal rule out of any element using the .hr class, works best with <span>'s
+.hr(@colour: #555, @height: 1px, @shadowColour: #efefef, @shadowHeight: 1px, @shadowType) {
+	display:block;
+	width:100%;
+	height:@height;
+	background-color:@colour;
+	border-bottom:@shadowHeight @shadowType @shadowColour;
+}
+
+// Put clearfix styles onto any element
+.clearfix() {
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}

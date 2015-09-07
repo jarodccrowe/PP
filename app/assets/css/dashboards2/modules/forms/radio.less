@@ -1,0 +1,40 @@
+.radio-button-group {
+
+    .radio-button-item {
+        margin-bottom: 10px;
+        height: 20px;
+        cursor: pointer;
+        clear: both;
+
+        .radio-button {
+            background: transparent url(/assets/images/radio-16.png) no-repeat 0 0;
+            float: left;
+            height: 16px;
+            width:16px;
+            margin: 0px 10px 0 0;
+        }
+
+        .radio-button-label {
+            float: left;
+            color: @greyDark;
+            font-size: @baseFontSize;
+        }
+
+        &.item-selected {
+             .radio-button {
+                background: transparent url(/assets/images/radio-16.png) no-repeat 0 -16px;
+            }
+        }        
+    }
+    &.inline {
+        width:100%;
+        .radio-button-item {
+            float:left;
+            clear: none;
+            margin-left: 25px;
+            &:first-child {
+                margin-left:0;
+            }
+        }
+    }
+}

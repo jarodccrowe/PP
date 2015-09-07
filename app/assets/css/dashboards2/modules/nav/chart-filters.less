@@ -1,0 +1,41 @@
+.chart-filters {
+	position: relative;
+	padding:20px;
+	margin-bottom:15px;
+	background: @bgGreyLighter;
+	border:@border;
+}
+
+.chart-filter-options {
+	float:left;
+	width:50%;
+	&:first-child {
+		float: none;
+		width: 100%;
+		border-bottom: @borderDotted;
+		padding-bottom:10px;
+		margin-bottom: 10px;
+	}
+}
+
+.nav-pills-chart-filters {
+	> li {
+		> a {
+			background:transparent;
+			border:none;
+			border-radius:10px;
+			padding:5px 10px;
+			&:hover {
+				color:#fff;
+				background:@theme-colour-primary;
+			}
+		}
+		&:first-child {
+			margin-left: 0;
+		}
+	}
+}
+
+.chart-tooltip {
+	margin:0;
+}

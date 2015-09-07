@@ -1,0 +1,42 @@
+.function-buttons {
+	overflow:auto;
+	margin-top: 40px;
+	.function-button {
+		color:@white;
+		font-size: @baseFontSize - .6em;
+		font-weight: lighter;
+		text-decoration: none;
+		text-transform:uppercase;
+		float:left;
+		width:70px;
+		height:70px;
+		margin-right:4px;
+		margin-bottom:5px;
+		background: @greyDark;
+
+		&.function-btn-innactive {
+			background: #cbcbcb;
+		}
+		&:hover {
+			background:@greyDarker;
+		}
+		span {
+			display: block;
+			text-align:center;
+			font-size: @baseFontSize;
+		}
+		i {
+			display: block;
+			width:50px;
+			height:50px;
+		}
+	}
+}
+
+@media screen and (max-width:767px) {
+
+	.function-buttons {
+		display:none;
+	}
+
+}

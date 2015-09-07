@@ -1,0 +1,16 @@
+
+// coloured lines underneath headings
+.line {
+	display: block;
+	height: 2px;
+	width: 85px;
+	margin: 20px 0;
+	
+	&.line-small {
+		margin:10px 0;
+	}
+	&.iga-red {
+		background-color:@theme-colour-primary;
+		border-color: darken(@theme-colour-primary, 15%)
+	}
+}

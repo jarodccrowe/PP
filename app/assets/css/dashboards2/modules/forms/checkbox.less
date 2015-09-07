@@ -1,0 +1,29 @@
+.check-box-item{
+    margin-bottom: 10px;
+    height: 20px;
+    cursor: pointer;
+    clear: both;
+
+    //Checkbox element
+    .check-box{
+        background: transparent url(../images/check-16.png) no-repeat 0 0;
+        float: left;
+        height: 16px;
+        width:16px;
+        margin: 0 10px 0 0;
+    }
+
+    //Checkbox label
+    .check-box-label{
+        float: left;
+        color: @greyDark;
+        font-size: @baseFontSize;
+    }
+
+     //Selected state
+    &.item-selected{
+         .check-box{
+            background: transparent url(../images/check-16.png) no-repeat 0 -16px;
+        }
+    }
+}

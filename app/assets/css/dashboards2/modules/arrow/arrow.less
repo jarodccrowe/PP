@@ -1,0 +1,51 @@
+// Special variables for arrow
+@arrowSize:10px;
+
+.drop-arrow {
+	position:absolute;
+	display: inline-block;
+	border-color: transparent;
+	border-style: solid;
+	&.top {
+		top:-@arrowSize;
+		border-bottom-color: @borderDark;
+		border-width:0 @arrowSize @arrowSize;
+		&:after {
+			top: 1px;
+			margin-left: -10px;
+			border-top-width: 0;
+			border-bottom-color: #f8f8f8;
+		}
+	}
+	&.bottom {
+		bottom: -@arrowSize -1;
+		border-bottom-color: @borderDark;
+		border-width: @arrowSize @arrowSize 0;
+		&:after {
+			bottom: 1px;
+			margin-left: -10px;
+			border-bottom-width: 0;
+			border-top-color: #fff;
+		}
+	}
+	&.left {
+		left: @arrowSize;
+	}
+	&.middle {
+		left: 50%;
+		margin-left: -@arrowSize;
+	}
+	&.right {
+		right:@arrowSize * 5;
+	}
+	&:after {
+		border-width: 10px;
+		content: "";
+		position: absolute;
+		display: block;
+		width: 0;
+		height: 0;
+		border-color: transparent;
+		border-style: solid;
+	}
+}

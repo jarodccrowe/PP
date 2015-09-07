@@ -1,0 +1,81 @@
+include mixins.jade
+
+doctype html
+html(ng-app="dashboard" ng-controller="siteCtrl")
+  head
+    meta(name="viewport", content-width="device-width", initial-scale=1.0, maximum-scale=1.0, user-scalable="no")
+    link(rel="SHORTCUT ICON", href="/assets/images/pp.ico")
+    link(rel="stylesheet", type="text/css", href="/assets/css/pp-core.css")
+    link(rel="stylesheet", type="text/css", href="/assets/css/dashboards2.css")
+    
+  body
+    .wrapper
+      .navbar.navbar-infinity.navbar-static-top.infinity-topbar(role="navigation")
+        .navbar-header
+          button(type="button", class="navbar-toggle", data-toggle="collapse", data-target=".navbar-ex1-collapse")
+            span.sr-only Toggle navigation
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          .logo-section
+            .dropdown
+              a.dropdown-toggle.navbar-brand(href='#')
+                img(class="navbar-logo img-responsive", src='/assets/images/logo-ip.png')
+        .collapse.navbar-collapse.navbar-ex1-collapse
+          ul.navbar-nav.navbar-right.user
+            li.user-account
+              .dropdown
+                a(href="#", class="dropdown-toggle", data-toggle="dropdown")
+                  img(src="//cloud.pureprofile.com/images/profile-photo-30.png", alt="image description", width="35", height="35")
+                  i.fa.fa-bars.menu-image
+                ul(class="dropdown-menu", role="menu")
+                  li: a(href='/admin/business-details/') Admin
+                  li: a(href='/account/account-details/') Account
+                  li: a(href='/account/business-details/') Users
+                  li: a(href='#') Help
+                  li.bdr-top: a(href='/logout') Sign out
+
+      //- Angular app
+      div(ng-view)
+      .push
+
+    footer.footer.hidden-print
+      .container
+        .row
+          .col-md-12
+            .row
+              .col-md-12
+                .logo: img(src='//cloud.pureprofile.com/images/infinity-logo-footer-2.png', alt='Infinity Platform')
+                p.copyright Copyright &copy; 2014. Pureprofile Australia Pty Ltd. Patented and patent pending.
+            .row
+              .col-md-12
+                ul.footer-menu
+                  li
+                    a(href='http://www.pureprofile.com/') Pureprofile
+                  li
+                    | •&nbsp;
+                    a(href='http://www.pureprofile.com/businesses') Pureprofile for Business
+                  li
+                    | •&nbsp;
+                    a(href='http://www.pureprofile.com/business/terms') Terms of Service
+                  li
+                    | •&nbsp;
+                    a(href='http://www.pureprofile.com/business/privacy-policy/') Privacy Policy
+                  li
+                    | •&nbsp;
+                    a(href='http://www.pureprofile.com/business/contact-us/') Contact us
+    block scripts
+      //- Vendor scripts
+      script(type="text/javascript", src="/assets/js/vendor/jquery-1.11.0.min.js")
+      script(type="text/javascript", src="/assets/js/vendor/bootstrap3.min.js")
+      script(type="text/javascript", src="/assets/js/vendor/angular/angular.min.js")
+      script(type="text/javascript", src="/assets/js/vendor/angular/angular-resource.min.js")
+      script(type="text/javascript", src="/assets/js/vendor/angular/angular-route.min.js")
+      //- Application scripts
+      script(type="text/javascript", src="/assets/js/plugins.js")
+      script(type="text/javascript", src="/assets/js/vendor/highcharts.funnel.js")
+      script(type="text/javascript", src="/assets/js/main.js")
+      //- View scripts
+      script(type="text/javascript", src="/index.js")
+      //- Live Reload; for dev only
+      script(src="//localhost:9000/livereload.js")

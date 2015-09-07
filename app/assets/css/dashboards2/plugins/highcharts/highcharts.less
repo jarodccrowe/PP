@@ -1,0 +1,93 @@
+//
+// Bug fix for data labels on bars appearing over the tooltip
+//
+.highcharts-tooltip span {
+    z-index:2!important;
+}
+.hzindex .highcharts-data-labels div span{
+    z-index:-1!important;
+}
+//
+// Highchart containers
+//
+.chart-container {
+	min-width: 310px; 
+	height: 500px; 
+	width: 100%;
+	margin: 0 auto;
+	&.small{
+		height:300px;
+	}
+}
+
+//
+// Custom Legends for Highcharts
+//
+.chart-legend {
+	overflow:auto;
+	&.cols-2 {
+		.chart-legend-item {
+			width:50%;
+			margin-right:0;
+		}
+	}
+	&.cols-3 {
+		.chart-legend-item {
+			width:33%;
+			margin-right:0;
+		}
+	}
+}
+
+.chart-legend-item,
+.chart-legend-colour,
+.chart-legend-label {
+	float:left;
+}
+
+.chart-legend-item {
+	margin-top:5px;
+	margin-right:35px;
+}
+
+// Legend colours, all sets are in order from lightest(1) to darkest
+.chart-legend-colour {
+	width:12px;
+	height:12px;
+	margin:3px 10px 0 0;
+	// Blue
+	&.blue-1 {
+		background-color:#a5d9fc;
+	}
+	&.blue-2 {
+		background-color:#6fb7e6;
+	}
+	&.blue-3 {
+		background-color:#2f8fcf;
+	}
+	&.blue-4 {
+		background-color:#0064a7;
+	}
+	&.blue-5 {
+		background-color:#004776;
+	}
+	&.blue-6 {
+		background-color:#002239;
+	}
+	// Grey
+	&.grey-1 {
+		background-color:#cccccc;
+	}
+	// Orange
+	&.orange-1 {
+		background-color:#ff9700;
+	}
+	// Red
+	&.red-1 {
+		background-color:#ed1b2d;
+	}
+}
+
+.chart-legend-label {
+	font-size:1.3em;
+}
