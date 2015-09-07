@@ -31,7 +31,7 @@ $routeProvider
 
 }]);
 
-// Bootstrap application
+//Bootstrap application
 dashboard.run(['$rootScope', '$http', '$window', function($rootScope, $http, $window) {
 
   var initialize = function(data) {
@@ -49,25 +49,41 @@ dashboard.run(['$rootScope', '$http', '$window', function($rootScope, $http, $wi
 /* Services
  * ----------------------------------------------------------------------*/
 
+ dashboard.factory('SiteData', ['$http', '$log', '$q', function($http, $log, $q){
+   return {
+     getData: function () {
+       return $http.get('/data/site-data.json')
+       .then(function(response) {
+         return response.data;
+       }, function(response) {
+         //handle error
+       });
+     }
+   }
+ }]);
+
 dashboard.factory('BreakfastCereals', ['$http', '$log', '$q', function($http, $log, $q){
   return {
     getData: function () {
       return $http.get('/data/breakfast-cereals.json')
       .then(function(response) {
-        console.log(response.data);
         return response.data;
       }, function(response) {
-        console.log(response);
+        //handle error
       });
     }
-
   }
 }]);
 
 dashboard.factory('OnTheGo', ['$http', function($http){
   return {
     getData: function () {
-      return $http.get('/data/on-the-go.json');
+      return $http.get('/data/on-the-go.json')
+      .then(function(response) {
+        return response.data;
+      }, function(response) {
+        //handle error
+      });
     }
   }
 }]);
@@ -75,37 +91,50 @@ dashboard.factory('OnTheGo', ['$http', function($http){
 dashboard.factory('NonDairyMilk', ['$http', function($http){
   return {
     getData: function () {
-      return $http.get('/data/non-dairy-milk.json');
+      return $http.get('/data/non-dairy-milk.json')
+      .then(function(response) {
+        return response.data;
+      }, function(response) {
+        //handle error
+      });
     }
   }
 }]);
 
 /* Controllers
  * ----------------------------------------------------------------------*/
-dashboard.controller('siteCtrl', ['$scope', '$http', '$rootScope', function($scope, $http, $rootScope) {
+// dashboard.controller('siteCtrl', ['$scope', '$http', '$rootScope', function($scope, $http, $rootScope) {
+//    No longer used
+// }]);
 
-}]);
-
-dashboard.controller('breakfastCerealsCtrl', ['$scope', '$http', '$rootScope', 'BreakfastCereals',
+dashboard.controller('breakfastCerealsCtrl', ['$scope', '$http', '$rootScope',
+'BreakfastCereals',
 function($scope, $http, $rootScope, BreakfastCereals) {
-      $scope.brandData = BreakfastCereals.getData();
+  BreakfastCereals.getData().then(function(data) {
+    $scope.brandData = data;
+  }, function(data) {
+    //handle error
+  })
 }]);
 
-dashboard.controller('onTheGoCtrl', ['$scope', '$http', '$rootScope', 'OnTheGo', function($scope, $http, $rootScope, OnTheGo) {
-    OnTheGo.getData().success(function(data) {
+dashboard.controller('onTheGoCtrl', ['$scope', '$http', '$rootScope', 'OnTheGo',
+'SiteData',
+function($scope, $http, $rootScope, OnTheGo) {
+    OnTheGo.getData().then(function(data) {
       $scope.brandData = data;
-    }).error(function(data) {
-      console.log(data);
-    });
+    }, function(data) {
+      //handle error
+    })
 }]);
 
-dashboard.controller('nonDairyMilkCtrl', ['$scope', '$http', '$rootScope', 'NonDairyMilk', function($scope, $http, $rootScope, NonDairyMilk) {
-    NonDairyMilk.getData().success(function(data) {
+dashboard.controller('nonDairyMilkCtrl', ['$scope', '$http', '$rootScope',
+'NonDairyMilk',
+function($scope, $http, $rootScope, NonDairyMilk) {
+    NonDairyMilk.getData().then(function(data) {
       $scope.brandData = data;
-      console.log($scope.brandData);
-    }).error(function(data) {
-      console.log(data);
-    });
+    }, function(data) {
+      //handle error
+    })
 }]);
 
 /* Directives
@@ -192,7 +221,6 @@ dashboard.directive('stickyToolbar', function() {
 });
 
 dashboard.directive('chart', function() {
-
   return {
     restrict: 'E',
     template: '<div></div>',
